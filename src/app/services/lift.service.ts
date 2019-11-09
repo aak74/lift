@@ -9,7 +9,7 @@ export class LiftService {
   constructor() { }
 
   getFloors() {
-    return Array(floorsCount).fill(0).map((x, i) => i + 1);;
+    return Array(floorsCount).fill(0).map((_, i) => floorsCount - i);;
   }
 
   getLiftCount() {
@@ -26,5 +26,10 @@ export class LiftService {
       return ['up'];
     }
     return ['up', 'down'];
+  }
+
+  pushButton(direction: string, floor: number) {
+    console.log('LiftService.pushButton', direction, floor);
+
   }
 }

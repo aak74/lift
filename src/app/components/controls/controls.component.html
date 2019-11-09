@@ -2,5 +2,6 @@
   <app-control
     *ngFor="let control of getControls();"
     [control]="control"
+    (pushButton)="click($event)"
   ></app-control>
 </div>

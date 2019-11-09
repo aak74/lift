@@ -14,4 +14,8 @@ export class ControlsComponent {
   getControls() {
     return this.liftService.getControls(this.floor);
   }
+
+  click(direction: string) {
+    this.liftService.pushButton(direction, this.floor);
+  }
 }
