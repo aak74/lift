@@ -1,15 +1,26 @@
 import { Injectable } from '@angular/core';
 import { floorsCount, liftCount } from './lift.data';
+import { Floor, Control } from './interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LiftService {
+  floors: Floor[] = [];
 
-  constructor() { }
+  constructor() {
+    for (let i = 0; i < floorsCount; i++) {
+      const controls = this.getControls(floorsCount - i)
+        .map(control => ({ direction: control, isActive: false }));
+      this.floors.push({
+        number: floorsCount - i,
+        controls,
+      });
+    }
+  }
 
   getFloors() {
-    return Array(floorsCount).fill(0).map((_, i) => floorsCount - i);;
+    return this.floors;
   }
 
   getLiftCount() {
@@ -17,7 +28,6 @@ export class LiftService {
   }
 
   getControls(floor: number) {
-    // console.log(floor);
     if (floor >= floorsCount) {
       return ['down'];
     }
@@ -28,8 +38,8 @@ export class LiftService {
     return ['up', 'down'];
   }
 
-  pushButton(direction: string, floor: number) {
-    console.log('LiftService.pushButton', direction, floor);
-
+  pushButton(control: Control, floor: Floor) {
+    // console.log('LiftService.pushButton', control, floor);
+    control.isActive = !control.isActive;
   }
 }

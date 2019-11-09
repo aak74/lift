@@ -1,6 +1,7 @@
 <div
   class="control"
   (click)="onClick($event)"
+  [class.active]="control.isActive"
 >
-  <i class="material-icons">{{ control === 'up' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}</i>
+  <i class="material-icons">{{ control.direction === 'up' ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}</i>
 </div>

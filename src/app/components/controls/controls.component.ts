@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { LiftService } from 'src/app/services/lift.service';
+import { Floor, Control } from '../../services/interfaces';
 
 @Component({
   selector: 'app-controls',
@@ -7,15 +8,15 @@ import { LiftService } from 'src/app/services/lift.service';
   styleUrls: ['./controls.component.sass']
 })
 export class ControlsComponent {
-  @Input() floor: number;
+  @Input() floor: Floor;
 
   constructor(private liftService: LiftService) { }
 
   getControls() {
-    return this.liftService.getControls(this.floor);
+    return this.floor.controls;
   }
 
-  click(direction: string) {
-    this.liftService.pushButton(direction, this.floor);
+  click(control: Control) {
+    this.liftService.pushButton(control, this.floor);
   }
 }
