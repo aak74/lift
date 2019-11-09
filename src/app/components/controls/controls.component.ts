@@ -8,7 +8,7 @@ import { Floor, Control } from '../../services/interfaces';
   styleUrls: ['./controls.component.sass']
 })
 export class ControlsComponent {
-  @Input() floor: Floor;
+  @Input() floor: Floor = { number: 1, controls: [{ direction: 'up', isActive: false }]};
 
   constructor(private liftService: LiftService) { }
 
