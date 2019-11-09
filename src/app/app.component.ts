@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LiftService } from './services/lift.service';
 // import { FloorComponent } from './components/floor/floor.component';
 
 @Component({
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  floors = [1, 2, 3];
   title = 'lift';
+  constructor(private liftService: LiftService) { }
+
+  getFloors() {
+    return this.liftService.getFloors();
+  }
 }

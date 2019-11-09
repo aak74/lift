@@ -1,4 +1,5 @@
 <div class="controls">
-  <app-control></app-control>
-  <app-control></app-control>
+  <app-control
+    *ngFor="let control of getControls();"
+  ></app-control>
 </div>

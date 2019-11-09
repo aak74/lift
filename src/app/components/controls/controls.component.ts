@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { LiftService } from 'src/app/services/lift.service';
 
 @Component({
   selector: 'app-controls',
   templateUrl: './controls.component.html',
   styleUrls: ['./controls.component.sass']
 })
-export class ControlsComponent implements OnInit {
+export class ControlsComponent {
+  @Input() floor: number;
 
-  constructor() { }
+  constructor(private liftService: LiftService) { }
 
-  ngOnInit() {
+  getControls() {
+    return this.liftService.getControls(this.floor);
   }
-
 }

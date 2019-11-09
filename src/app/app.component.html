@@ -1,5 +1,7 @@
 <div>
   Lift
-  <app-floor *ngFor="let item of floors; let i = index"
+  <app-floor
+    *ngFor="let floor of getFloors(); let i = index"
+    [floor]="floor"
   ></app-floor>
 </div>

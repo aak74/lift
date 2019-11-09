@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { LiftService } from 'src/app/services/lift.service';
 
 @Component({
   selector: 'app-floor',
@@ -6,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./floor.component.sass']
 })
 
-export class FloorComponent implements OnInit {
-  lifts = [1, 2];
-  constructor() { }
+export class FloorComponent {
+  @Input() floor: number;
+  constructor(private liftService: LiftService) { }
 
-  ngOnInit() {
+  getLifts() {
+    return Array(this.liftService.getLiftCount()).fill(0);
   }
-
 }

@@ -1,4 +1,4 @@
 <div class="floor">
-  <app-lift *ngFor="let item of lifts; let i = index"></app-lift>
-  <app-controls></app-controls>
+  <app-lift *ngFor="let item of getLifts(); let i = index"></app-lift>
+  <app-controls [floor]="floor"></app-controls>
 </div>
