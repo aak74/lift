@@ -8,7 +8,7 @@ import { LiftService } from './services/lift.service';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'lift';
+  title = 'How does lifts works';
   constructor(private liftService: LiftService) { }
 
   getFloors() {
