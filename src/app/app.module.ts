@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FloorComponent } from './components/floor/floor.component';
-import { LiftComponent } from './components/lift/lift.component';
+import { LiftDoorsComponent } from './components/lift-doors/lift-doors.component';
 import { ControlsComponent } from './components/controls/controls.component';
 import { ControlComponent } from './components/control/control.component';
 
@@ -11,7 +11,7 @@ import { ControlComponent } from './components/control/control.component';
   declarations: [
     AppComponent,
     FloorComponent,
-    LiftComponent,
+    LiftDoorsComponent,
     ControlsComponent,
     ControlComponent,
   ],

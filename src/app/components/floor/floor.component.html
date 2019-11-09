@@ -1,5 +1,5 @@
 <div class="floor">
-  <app-lift *ngFor="let item of getLifts(); let i = index"></app-lift>
+  <lift-doors *ngFor="let item of getLifts(); let i = index"></lift-doors>
   <app-controls [floor]="floor"></app-controls>
   <div class="floor-number">{{ floor.number }}</div>
 </div>
